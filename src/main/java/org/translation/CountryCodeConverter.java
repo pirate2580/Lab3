@@ -38,7 +38,7 @@ public class CountryCodeConverter {
             List<String> lines = Files.readAllLines(Paths.get(getClass()
                     .getClassLoader().getResource(filename).toURI()));
 
-            // TODO Task: use lines to populate the instance variable(s)
+            // TODO Task: use lines to populate the instance variable(s) DONE
             Iterator<String> iterator = lines.iterator();
             iterator.next();
             int tmp = 2 + 1;
@@ -52,7 +52,6 @@ public class CountryCodeConverter {
         catch (IOException | URISyntaxException ex) {
             throw new RuntimeException(ex);
         }
-
     }
 
     /**
@@ -61,8 +60,8 @@ public class CountryCodeConverter {
      * @return the name of the country corresponding to the code
      */
     public String fromCountryCode(String code) {
-        // TODO Task: update this code to use an instance variable to return the correct value
-        return code;
+        // TODO Task: update this code to use an instance variable to return the correct value (DONE)
+        return codeToname.get(code);
     }
 
     /**
@@ -71,8 +70,8 @@ public class CountryCodeConverter {
      * @return the 3-letter code of the country
      */
     public String fromCountry(String country) {
-        // TODO Task: update this code to use an instance variable to return the correct value
-        return country;
+        // TODO Task: update this code to use an instance variable to return the correct value (DONE)
+        return nameTocode.get(country);
     }
 
     /**
@@ -80,7 +79,7 @@ public class CountryCodeConverter {
      * @return how many countries are included in this code converter.
      */
     public int getNumCountries() {
-        // TODO Task: update this code to use an instance variable to return the correct value
-        return 0;
+        // TODO Task: update this code to use an instance variable to return the correct value (DONE)
+        return nameTocode.size();
     }
 }
