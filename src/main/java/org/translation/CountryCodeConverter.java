@@ -5,6 +5,7 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -14,6 +15,8 @@ import java.util.Map;
 public class CountryCodeConverter {
 
     // TODO Task: pick appropriate instance variable(s) to store the data necessary for this class
+    private Map<String, String> nameTocode = new HashMap<>();
+    private Map<String, String> codeToname = new HashMap<>();
 
     /**
      * Default constructor which will load the country codes from "country-codes.txt"
@@ -36,7 +39,15 @@ public class CountryCodeConverter {
                     .getClassLoader().getResource(filename).toURI()));
 
             // TODO Task: use lines to populate the instance variable(s)
-
+            Iterator<String> iterator = lines.iterator();
+            iterator.next();
+            int tmp = 2 + 1;
+            while (iterator.hasNext()) {
+                String line = iterator.next();
+                String[] components = line.split("\t");
+                nameTocode.put(components[0].trim(), components[tmp].trim());
+                codeToname.put(components[tmp].trim(), components[0].trim());
+            }
         }
         catch (IOException | URISyntaxException ex) {
             throw new RuntimeException(ex);
