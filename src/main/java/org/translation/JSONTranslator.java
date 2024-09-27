@@ -88,6 +88,7 @@ public class JSONTranslator implements Translator {
     @Override
     public String translate(String country, String language) {
         int num = countryTocode.get(country);
-        return null;
+        int idx = countryLanguages.get(num).indexOf(language);
+        return countryTranslations.get(num).get(idx);
     }
 }
