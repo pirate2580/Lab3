@@ -22,7 +22,7 @@ public class InLabByHandTranslator implements Translator {
      * @param country the country
      * @return list of language abbreviations which are available for this country
      */
-    // TODO Checkstyle: Static variable definition in wrong order. (DONE? idk)
+    // TODO Checkstyle: Static variable definition in wrong order. (DONE)
     public static final String CANADA = "can";
 
     @Override
