@@ -20,8 +20,11 @@ import org.json.JSONObject;
 public class JSONTranslator implements Translator {
 
     // TODO Task: pick appropriate instance variables for this class
+    // maps the 3 letter country code to its index in sample.json
     private final Map<String, Integer> countryTocode = new HashMap<>();
+    // maps index in sample.json to the list of languages for that 3-letter country code
     private final Map<Integer, List<String>> countryLanguages = new HashMap<>();
+    // maps index in sample.json to the list of translations for that 3-letter country code
     private Map<Integer, List<String>> countryTranslations = new HashMap<>();
 
     /**
@@ -56,6 +59,7 @@ public class JSONTranslator implements Translator {
                     if ("id".equals(key) || "alpha2".equals(key) || "alpha3".equals(key)) {
                         continue;
                     }
+                    // translation of
                     Object value = jsonObject.get(key);
                     codes.add(key);
                     translated.add((String) value);
