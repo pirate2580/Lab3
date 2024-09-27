@@ -6,6 +6,7 @@ import java.util.List;
 // TODO Task: modify this class so that it also supports the Spanish language code "es" and
 //            one more language code of your choice. Each member of your group should add
 //            support for one additional language code on a branch; then push and create a pull request on GitHub.
+// Note (Fiona): I added stuff for Spanish but you guys all need to add one language
 
 // Extra Task: if your group has extra time, you can add support for another country code in this class.
 
@@ -21,7 +22,7 @@ public class InLabByHandTranslator implements Translator {
      * @param country the country
      * @return list of language abbreviations which are available for this country
      */
-    // TODO Checkstyle: Static variable definition in wrong order.
+    // TODO Checkstyle: Static variable definition in wrong order. (DONE? idk)
     public static final String CANADA = "can";
 
     @Override
@@ -53,8 +54,8 @@ public class InLabByHandTranslator implements Translator {
      */
     @Override
     public String translate(String country, String language) {
-        // TODO Checkstyle: Return count is 5 (max allowed for non-void methods/ lambdas is 2).
-        // TODO Checkstyle: String literal expressions should be on the left side of an equals comparison
+        // TODO Checkstyle: Return count is 5 (max allowed for non-void methods/ lambdas is 2) (DONE).
+        // TODO Checkstyle: String literal expressions should be on the left side of an equals comparison (DONE)
         if (!country.equals(CANADA)) {
             return null;
         }
