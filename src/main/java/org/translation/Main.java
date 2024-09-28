@@ -78,8 +78,7 @@ public class Main {
         CountryCodeConverter countryCodeConverter = new CountryCodeConverter();
         for (int i = 0; i < countryCodes.size(); i++) {
             // convert country code to country name
-            // System.out.println("testing" + countryCodeConverter.fromCountryCode(countryCodes.get(i).toUpperCase()));
-            countryNames.add(countryCodeConverter.fromCountryCode(countryCodes.get(i).toUpperCase()));
+            countryNames.add(countryCodeConverter.fromCountryCode(countryCodes.get(i).toLowerCase()));
         }
         // sort country names alphabetically
         Collections.sort(countryNames);

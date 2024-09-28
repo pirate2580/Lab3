@@ -43,8 +43,8 @@ public class CountryCodeConverter {
             while (iterator.hasNext()) {
                 String line = iterator.next();
                 String[] components = line.split("\t");
-                nameTocode.put(components[0].trim(), components[tmp].trim());
-                codeToname.put(components[tmp].trim(), components[0].trim());
+                nameTocode.put(components[0].trim(), components[tmp].trim().toLowerCase());
+                codeToname.put(components[tmp].trim().toLowerCase(), components[0].trim());
             }
         }
         catch (IOException | URISyntaxException ex) {
