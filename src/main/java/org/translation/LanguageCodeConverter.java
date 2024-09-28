@@ -59,7 +59,6 @@ public class LanguageCodeConverter {
      * @return the name of the language corresponding to the code
      */
     public String fromLanguageCode(String code) {
-        // TODO Naoroj(?): update this code to use your instance variable to return the correct value
         return codeConverterMap.get(code);
     }
 
@@ -69,7 +68,6 @@ public class LanguageCodeConverter {
      * @return the 2-letter code of the language
      */
     public String fromLanguage(String language) {
-        // TODO Naoroj (?): update this code to use your instance variable to return the correct value
         for (Map.Entry<String, String> entry : codeConverterMap.entrySet()) {
             if (entry.getValue().equals(language)) {
                 return entry.getKey();
@@ -83,7 +81,6 @@ public class LanguageCodeConverter {
      * @return how many languages are included in this code converter.
      */
     public int getNumLanguages() {
-        // TODO Naoroj: update this code to use your instance variable to return the correct value
         return codeConverterMap.size();
     }
 

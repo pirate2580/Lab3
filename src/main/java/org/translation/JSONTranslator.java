@@ -19,7 +19,6 @@ import org.json.JSONObject;
  */
 public class JSONTranslator implements Translator {
 
-    // TODO Task: pick appropriate instance variables for this class
     // maps the 3 letter country code to its index in sample.json
     private final Map<String, Integer> countryToIndex = new HashMap<>();
     // maps index in sample.json to the list of languages for that 3-letter country code
@@ -75,8 +74,6 @@ public class JSONTranslator implements Translator {
 
     @Override
     public List<String> getCountryLanguages(String country) {
-        // TODO Task: return an appropriate list of language codes,
-        //            but make sure there is no aliasing to a mutable object
 
         List<String> languageCodes = countryLanguages.get(countryToIndex.get(country));
         return new ArrayList<String>(languageCodes);
@@ -84,8 +81,6 @@ public class JSONTranslator implements Translator {
 
     @Override
     public List<String> getCountries() {
-        // TODO Task: return an appropriate list of country codes,
-        //            but make sure there is no aliasing to a mutable object
         return new ArrayList<>(countryToIndex.keySet());
     }
 
