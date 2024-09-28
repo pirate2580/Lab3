@@ -21,7 +21,7 @@ public class JSONTranslator implements Translator {
 
     // TODO Task: pick appropriate instance variables for this class
     // maps the 3 letter country code to its index in sample.json
-    private final Map<String, Integer> countryTocode = new HashMap<>();
+    private final Map<String, Integer> countryToIndex = new HashMap<>();
     // maps index in sample.json to the list of languages for that 3-letter country code
     private final Map<Integer, List<String>> countryLanguages = new HashMap<>();
     // maps index in sample.json to the list of translations for that 3-letter country code
@@ -49,7 +49,7 @@ public class JSONTranslator implements Translator {
             for (int i = 0; i < jsonArray.length(); ++i) {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                 String country = jsonObject.getString("alpha3");
-                countryTocode.put(country, i);
+                countryToIndex.put(country, i);
 
                 List<String> codes = new ArrayList<>();
                 List<String> translated = new ArrayList<>();
@@ -78,7 +78,7 @@ public class JSONTranslator implements Translator {
         // TODO Task: return an appropriate list of language codes,
         //            but make sure there is no aliasing to a mutable object
 
-        List<String> languageCodes = countryLanguages.get(countryTocode.get(country));
+        List<String> languageCodes = countryLanguages.get(countryToIndex.get(country));
         return new ArrayList<String>(languageCodes);
     }
 
@@ -86,12 +86,12 @@ public class JSONTranslator implements Translator {
     public List<String> getCountries() {
         // TODO Task: return an appropriate list of country codes,
         //            but make sure there is no aliasing to a mutable object
-        return new ArrayList<>(countryTocode.keySet());
+        return new ArrayList<>(countryToIndex.keySet());
     }
 
     @Override
     public String translate(String country, String language) {
-        int num = countryTocode.get(country);
+        int num = countryToIndex.get(country);
         int idx = countryLanguages.get(num).indexOf(language);
         return countryTranslations.get(num).get(idx);
     }

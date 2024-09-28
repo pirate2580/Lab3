@@ -41,7 +41,7 @@ public class CountryCodeConverter {
             // TODO Task: use lines to populate the instance variable(s) DONE
             Iterator<String> iterator = lines.iterator();
             iterator.next();
-            int tmp = 2 + 1;
+            int tmp = 2;
             while (iterator.hasNext()) {
                 String line = iterator.next();
                 String[] components = line.split("\t");
@@ -81,5 +81,17 @@ public class CountryCodeConverter {
     public int getNumCountries() {
         // TODO Task: update this code to use an instance variable to return the correct value (DONE)
         return nameTocode.size();
+    }
+
+    /**
+     * Main function.
+     * @param args arguments
+     */
+    public static void main(String[] args) {
+        CountryCodeConverter countryCodeConverter = new CountryCodeConverter();
+        // 249
+        System.out.println(countryCodeConverter.getNumCountries());
+        // Afghanistan
+        System.out.println(countryCodeConverter.fromCountryCode("AFG"));
     }
 }
